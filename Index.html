@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baby Shower Invitation</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Georgia, serif;
+}
+
+body{
+background:#fffaf2;
+color:#6b3d1f;
+text-align:center;
+overflow-x:hidden;
+}
+
+.hero{
+padding:50px 20px;
+background:linear-gradient(rgba(255,248,240,.9),rgba(255,248,240,.9)),
+url('https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=1200');
+background-size:cover;
+}
+
+h1{
+font-size:48px;
+color:#b22222;
+margin:20px 0;
+}
+
+.names{
+font-size:34px;
+font-weight:bold;
+line-height:1.5;
+}
+
+.section{
+padding:40px 20px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:15px;
+border-radius:20px;
+box-shadow:0 0 15px rgba(0,0,0,.1);
+}
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.box{
+background:#fff;
+padding:15px;
+border-radius:15px;
+width:80px;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+.number{
+font-size:28px;
+font-weight:bold;
+color:#c0392b;
+}
+
+.venue-btn{
+display:inline-block;
+padding:12px 25px;
+background:#b22222;
+color:white;
+text-decoration:none;
+border-radius:30px;
+margin-top:15px;
+}
+
+.footer{
+background:#f7e7ce;
+padding:30px;
+margin-top:30px;
+}
+
+.flower{
+position:fixed;
+top:-20px;
+font-size:20px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+<h3>॥ శ్రీ గణేశాయ నమః ॥</h3>
+
+<h1>Baby Shower</h1>
+
+<p>A Little Miracle is on the Way 👶</p>
+
+<br>
+
+<div class="names">
+Pasupureddy Saikumar ❤️<br>
+Pasupureddy Ashwini
+</div>
+
+<div class="countdown">
+<div class="box">
+<div id="days" class="number">0</div>
+Days
+</div>
+
+<div class="box">
+<div id="hours" class="number">0</div>
+Hours
+</div>
+
+<div class="box">
+<div id="minutes" class="number">0</div>
+Minutes
+</div>
+
+<div class="box">
+<div id="seconds" class="number">0</div>
+Seconds
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2>🌸 Family Blessings 🌸</h2>
+
+<div class="card">
+<h3>Grandmothers</h3>
+<p>Pasupureddy Aruna Kumari</p>
+<p>Chintalagiri Shashikala</p>
+</div>
+
+<div class="card">
+<h3>Pedda Nanna</h3>
+<p>Pasupureddy Srinivasa Rao</p>
+</div>
+
+<div class="card">
+<h3>Mama</h3>
+<p>Chintalagiri Rakesh</p>
+</div>
+</div>
+
+<div class="section">
+<h2>📅 Save The Date</h2>
+<h1 style="font-size:40px;">24 July 2026</h1>
+</div>
+
+<div class="section">
+<h2>📍 Venue</h2>
+
+<div class="card">
+NRI Anand Nagar Colony<br>
+Beeramguda
+<br><br>
+
+<a class="venue-btn"
+href="https://maps.google.com"
+target="_blank">
+View Location </a>
+
+</div>
+</div>
+
+<div class="section">
+<div class="card">
+<h2>💌 Invitation</h2>
+
+<br>
+
+A tiny miracle is growing and our hearts are overflowing with joy.
+
+<br><br>
+
+Please join us as we celebrate this beautiful journey into parenthood and bless our little bundle of joy.
+
+<br><br>
+
+Your presence and blessings will make this occasion truly special.
+
+</div>
+</div>
+
+<div class="footer">
+<h2>🙏 Awaiting Your Gracious Presence 🙏</h2>
+
+<br>
+
+<h3>Pasupureddy Family</h3>
+
+<br>
+
+🌸 Thank You 🌸
+
+</div>
+
+<script>
+
+const targetDate =
+new Date("July 24, 2026 00:00:00").getTime();
+
+setInterval(() => {
+
+const now = new Date().getTime();
+
+const gap = targetDate - now;
+
+const days =
+Math.floor(gap/(1000*60*60*24));
+
+const hours =
+Math.floor((gap%(1000*60*60*24))/(1000*60*60));
+
+const minutes =
+Math.floor((gap%(1000*60*60))/(1000*60));
+
+const seconds =
+Math.floor((gap%(1000*60))/1000);
+
+document.getElementById("days").innerHTML=days;
+document.getElementById("hours").innerHTML=hours;
+document.getElementById("minutes").innerHTML=minutes;
+document.getElementById("seconds").innerHTML=seconds;
+
+},1000);
+
+for(let i=0;i<20;i++){
+
+let flower=document.createElement("div");
+
+flower.innerHTML="🌸";
+
+flower.className="flower";
+
+flower.style.left=Math.random()*100+"vw";
+
+flower.style.animationDuration=
+(5+Math.random()*10)+"s";
+
+document.body.appendChild(flower);
+
+}
+
+</script>
+
+</body>
+</html>
