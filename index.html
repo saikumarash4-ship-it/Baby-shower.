@@ -221,14 +221,15 @@ Your presence and blessings will make this occasion truly special.
 
 <script>
 
-const targetDate =
-new Date("Jun 24, 2026 00:00:00").getTime();
+
+const countDownDate =
+new Date("2026-06-24T11:00:00+05:30").getTime();
 
 setInterval(() => {
 
 const now = new Date().getTime();
 
-const gap = targetDate - now;
+const gap = countDownDate - now;
 
 const days =
 Math.floor(gap/(1000*60*60*24));
